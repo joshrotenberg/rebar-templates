@@ -24,9 +24,23 @@ make
 erl -pa ebin/ deps/*/ebin
 ```
 
-then ...
+.. then ...
 
 ```
-application:start(doof).
+1> application:start(doof).
+ok
+2> poolboy:status(doof_pool).
+{ready,10,0,0}
+3> Worker = poolboy:checkout(doof_pool).
+<0.40.0>
+4> poolboy:status(doof_pool).
+{ready,9,0,1}
+5> poolboy:checkin(doof_pool, Worker).
+ok
+6> poolboy:status(doof_pool).
+{ready,10,0,0}
+7> ...
 ```
+
+and then you write your app.
 
