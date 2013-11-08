@@ -1,0 +1,28 @@
+%% project vars
+{variables, [
+	     {appid, "mypoolboyapp"},
+	     {version, "0.1.0"},
+	     {copyright_year, "2013"},
+	     {author_name, "Josh Rotenberg"},
+	     {author_email, "joshrotenberg@gmail.com"},
+	     {description, "My poolboy app"}
+	    ]}.
+
+%% doc and build
+{template, "poolboyapp.README", "README"}.
+{template, "poolboyapp.LICENSE", "LICENSE"}.
+{template, "poolboyapp.Makefile", "Makefile"}.
+{file, "poolboyapp.rebar.config", "rebar.config"}.
+
+%% source
+{template, "poolboyapp.app.src", "src/{{appid}}.app.src"}.
+{template, "poolboyapp_app.erl", "src/{{appid}}_app.erl"}.
+{template, "poolboyapp_sup.erl", "src/{{appid}}_sup.erl"}.
+{template, "poolboyapp_worker.erl", "src/{{appid}}_worker.erl"}.
+
+%% headers
+{template, "poolboyapp.hrl", "include/{{appid}}.hrl"}.
+
+%% other dirs
+{dir, "priv"}.
+{dir, "test"}.
