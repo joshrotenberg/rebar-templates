@@ -1,0 +1,3 @@
+[submodule "erlang.mk"]
+	path = erlang.mk
+	url = https://github.com/extend/erlang.mk
